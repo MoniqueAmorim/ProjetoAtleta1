@@ -1,0 +1,165 @@
+<DOCTYPE html>
+<html lang="en" ng-app="atletasModulo">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Cadastro de Atletas</title>
+      <script src="js/angular.min.js"></script>
+      <script src="Controller/atletas.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style> 
+      .link{
+       background-color:#494950;
+	   padding:20px;
+	   font-family:"Arial';
+	   font-size:20pt;
+	   transition:all .1%s linear;
+	   color:#f4f4f9;
+	   border-bottom:1px solid #222; 
+        }
+       .link2{
+	   background-color:#494950;
+	   padding:20px;
+	   font-family:'Arial';
+	   font-size:20pt;
+	   transition:all .1%s linear;
+	   color:#f4f4f9;
+	   border-bottom:1px solid #222;
+        }
+	   #check:ckecked .barra{
+	   transform: translatex(-300);
+	   }
+	   li{ 
+	   display: inline; 
+	   color:#f4f4f9;
+	   background-color:#A4A4A4;
+	   }
+       h2{
+       text-align: center;
+       font-size:70pt;
+       text-shadow: 2px 2px white;
+       color:#050542
+        }
+       input{
+       font-size:16pt;    
+        }
+       div{
+       font-size:20pt;      
+        }
+        select{
+            width:300px;
+            font-size:16pt; 
+        }
+        #customers {
+       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+       border-collapse: collapse;
+       width: 100%;  
+        }
+
+       #customers td, #customers th {
+         border: 1px solid #ddd;
+         padding: 8px;
+       }
+
+       #customers tr:nth-child(even){background-color: #494950;}
+
+       #customers tr:hover {background-color: #ddd;}
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color:#494950;
+        color: white;
+      }
+    </style>
+    </head>	
+	   <body ng-controller=atletasController>
+		   <div class="link"><h2> Cadastro dos Atletas </h2>
+             <form action = "gravaCliente.php"
+              method = "post"
+	          enctype= "multipart/form-data">
+            
+            <a button type="button" href="index.html" class="btn btn-secondary link">MENU PRINCIPAL</a>
+            <a href="submenu.html" class="link">VOLTAR</a>
+           </div>
+        <br>
+           
+		<form>
+		 
+		 <div class="link2">
+             <fieldset>
+                Nome:<input type="text" name="nome" id="nome" size="90" maxlength="100" placeholder=""><br><br>
+            		
+                Peso:<input type="text" name="peso" id="pesoAtleta" size="20" accesskey="" maxlength="45" placeholder="">
+				  
+		        Altura:<input type="int" name="nrAltura" id="nrAltura" size="20" maxlength="45" placeholder="0.00"><br><br>
+				  		 
+                Modalidade:<select name="modalidade" style="">
+				 <option value="">Selecione</option>
+                 <option value="AT">Atletismo</option>
+                 <option value="BA">Badminton</option>
+                 <option value="BS">Basquete</option>
+                 <option value="BE">Beisebol</option>
+           	     <option value="BO">Boxe</option>
+                 <option value="CA">Canoagem</option>
+                 <option value="CI">Ciclismo</option>
+                 <option value="ES">Esgrima</option>
+                 <option value="FU">Futebol</option>
+                 <option value="GI">Ginástica</option>
+                 <option value="HA">Halterofilismo</option>
+                 <option value="HD">Handebol</option>
+                 <option value="HI">Hipismo</option>
+                 <option value="HO">Hóquei</option>
+                 <option value="JU">Judô</option>
+                 <option value="NA">Natação</option>
+                 <option value="PO">Pólo Aquático</option>
+                 <option value="TE">Tênis</option>
+                 <option value="VO">Vôlei</option>
+				 </select> <br><br>
+             
+				Situação do Atleta:
+		        <input type="radio" name="situacaodoAtleta" id="situacaodoAtleta" value="C"checked>Competindo
+                <input type="radio" name="situacaodoAtleta" id="situacaodoAtleta" value="T" checked>Treinando
+		        <input type="radio" name="situacaodoAtleta" id="situacaodoAtleta" value="P" checked>Período de Provas<br><br>
+                 
+                Calculo da IMC:
+                <textarea name="calculodaIMC" id="calculodaIMC" rows="1" cols="40"></textarea>
+                <input type="button" value="IMC"  href="#" onClick="window.open('enviodecontrato.html','pagename','resizable,height=660,width=770'); return false;"><noscript> <a href="enviodecontrato.html" target="_blank"></a></noscript><br><br>
+                 
+                <body>
+			    <div>         
+                <table id="customers">
+                <thead>  
+                <tr> 
+               <th>Nome</th>
+               <th>Modalidade</th>  
+               <th>Situação do Atleta</th>
+               <th>Calculo da IMC</th>
+               </tr> 
+               </thead>
+               <tbody>
+               <tr> 
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+                </tr>
+                </tbody>
+                </table>
+               </div>
+               <br><br>
+               
+				<input type="submit" value="Gravar">
+				<input type="reset" value="Alterar">
+                <input type="reset" value="Limpar">
+                <input type="reset" value="Excluir">
+				<input type="button" name="imprimir" value="Imprimir" onclick="window.print();"></label></label>
+            </div>
+               </form></div></body>
+    <script src="js/jquery.min.js"></script>
+    </html>
+</DOCTYPE>
+    
+
+           
+	
